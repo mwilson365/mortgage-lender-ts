@@ -12,18 +12,15 @@ Use what you've learned about pair programming, the test cycle, and OOP to fulfi
 Your final code should have:
 
 1. No compile errors.
-2. No failing tests.
-3. Descriptive commit messages.
-4. Multiple commits.
-5. Meet acceptance criteria.
-6. Have good use of the four pillars of OOP
+2. Descriptive commit messages.
+3. Multiple commits.
+4. Meet acceptance criteria.
+4. Have good use of the four pillars of OOP
 
 **Tips**
 
 Apply what you've learned so far.
 
-- Write tests first
-- Use SEAT to guide you
 - Use red green refactor
 - Apply OOP when/where appropriate
 
