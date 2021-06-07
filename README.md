@@ -65,6 +65,7 @@ Example:
 |   125,000   |    200,000      |  approved   |
 |   125,000   |    125,000      |  approved   |
 ```
+// chkpt test 6/7 9:18a ct
 
 As a lender, I want to qualify loan applications, so that I can ensure I get my money back.
 

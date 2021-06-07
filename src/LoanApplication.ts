@@ -1,34 +1,42 @@
-export default class LoanApplication {
-    loanAmount: number = 0;
-    dti: number = 0;
-    creditScore: number = 0;
-    savings: number = 0;
+import {LoanStatus} from "./LoanStatus";
+import MortgageLender from "./MortgageLender";
 
-    //loanApp[0] is Loan Amount
-    //LoanApp[1] is DTI
-    //LoanApp[2] is Credit Score
-    //LoanApp[3] is Savings Amount
+export default class LoanApplication extends MortgageLender {
+    loanStatus: LoanStatus;
+    loanAmount: number; 
+    dti: number;
+    creditScore: number;
+    savings: number;
+    constructor(_loanAmount: number,_dti: number, _creditScore: number,_savings: number  ){
+    super();
+    this.loanAmount = _loanAmount;
+    this.dti =_dti;
+    this.creditScore = _creditScore;
+    this.savings = _savings;
+    }
+    
+    
+    
     isApproved(){
-        if( this.loanAmount > this.savings){
-            return false;
-        } else{
+        if( this.loanStatus === LoanStatus.Accepted){
             return true;
+        } else{
+            return false;
         }
-        
 
     }
 
 
-    isQualified(loanApp: number[]){
-        if ((loanApp[0] * 0.25) > loanApp[3]) {
+    isQualified(){
+        if ((this.loanAmount * 0.25) > this.savings) {
             return false;
-        } else if (loanApp[1] > 0.36) {
+        } else if (this.dti < 36) {
             return false; 
-        } else if (loanApp[2] < 620)  {
+        } else if (this.creditScore < 620)  {
             return false;
         } else {
             return true;
         } 
             
-        }
+        }  
 }
