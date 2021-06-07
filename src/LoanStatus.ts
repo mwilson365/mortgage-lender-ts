@@ -1,1 +1,3 @@
-export enum LoanStatus {}
+export enum LoanStatus {
+    
+}
