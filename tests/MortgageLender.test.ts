@@ -38,7 +38,7 @@ describe('Mortgage Lender', () => {
 
     test('should mark as unqualified applications with DTI < 36%', ()=> {
         lender.addFunds(300000);
-        let loanApp = createLoanApplication(125000, 30)
+        let loanApp = createLoanApplication(125000, 36)
         lender.reviewApplication(loanApp);
         expect(loanApp.isQualified).toBeFalsy();
     });
@@ -97,7 +97,7 @@ describe('Mortgage Lender', () => {
 })
 
 function createLoanApplication(loanAmount: number = 125000,
-                               dti: number = 38,
+                               dti: number = 35,
                                creditScore: number = 650,
                                savings: number = 50000) {
     return new LoanApplication(loanAmount, dti, creditScore, savings)

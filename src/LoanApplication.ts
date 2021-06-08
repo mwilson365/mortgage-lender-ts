@@ -7,6 +7,7 @@ export default class LoanApplication extends MortgageLender {
     dti: number;
     creditScore: number;
     savings: number;
+    isQualified: boolean = false;
     constructor(_loanAmount: number,_dti: number, _creditScore: number,_savings: number  ){
     super();
     this.loanAmount = _loanAmount;
@@ -25,18 +26,4 @@ export default class LoanApplication extends MortgageLender {
         }
 
     }
-
-
-    isQualified(){
-        if ((this.loanAmount * 0.25) > this.savings) {
-            return false;
-        } else if (this.dti < 36) {
-            return false; 
-        } else if (this.creditScore < 620)  {
-            return false;
-        } else {
-            return true;
-        } 
-            
-        }  
 }
